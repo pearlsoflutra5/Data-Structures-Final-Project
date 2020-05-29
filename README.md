@@ -17,24 +17,24 @@ The Server must be runnning and connected to the Client file. To search somethin
 ## Code Example
 ```
 public  void search(String t, String a){
-		indexes.clear();
-		String locator = t.toLowerCase();
-		String locator2 = a.toLowerCase();
-		if (locator != null && locator.equals("all") || locator2 != null && locator2.equals("all")){
-			for(int i = 0; i<libraryList.length; i++){
+	indexes.clear();
+	String locator = t.toLowerCase();
+	String locator2 = a.toLowerCase();
+	if (locator != null && locator.equals("all") || locator2 != null && locator2.equals("all")){
+		for(int i = 0; i<libraryList.length; i++){
+			indexes.add(i);
+		}
+	}
+	else{
+		for(int i = 0; i<libraryList.length; i++){
+			if(libraryList[i][0].toLowerCase().equals("''" + locator + "''")){
+				indexes.add(i);
+			}
+			else if (libraryList[i][1].toLowerCase().equals("by " + locator2)){
 				indexes.add(i);
 			}
 		}
-		else{
-			for(int i = 0; i<libraryList.length; i++){
-				if(libraryList[i][0].toLowerCase().equals("''" + locator + "''")){
-					indexes.add(i);
-				}
-				else if (libraryList[i][1].toLowerCase().equals("by " + locator2)){
-					indexes.add(i);
-				}
-			}
-		}			
-	}
+	}			
+}
 ```
 This part of the code is in the Server. It is the search method for finding the results of the search. I really appreciate how it is able to be a small portion of code that is vital to the whole program.
