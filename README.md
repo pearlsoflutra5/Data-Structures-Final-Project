@@ -8,7 +8,7 @@ I built this program to combine several techniques I have learned. I also wanted
 
 ## How to Run
 The Server must be runnning and connected to the Client file. To search something, a title, author, or both may be typed into the correct locations. To send the data to the Server the user can push the search button or press the enter key on their keyboard. 
-
+<img src="/images/server.png">
 [Server Screenshot](/images/server.png)
 
 [Client Screenshot](/images/client.png)
