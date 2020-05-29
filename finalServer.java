@@ -43,16 +43,18 @@ public class finalServer extends Application {
 				DataOutputStream fromServer = new DataOutputStream(socket.getOutputStream());
 
 				while (true) {
-					String titleKeyword = toServer.readUTF().trim();
-					String authorKeyword = toServer.readUTF().trim();
+					String titleKeyword = toServer.readUTF();
+					String authorKeyword = toServer.readUTF();
+					System.out.println(titleKeyword + " " + authorKeyword);
 					search(titleKeyword, authorKeyword);
+					
 					if (!indexes.isEmpty()){
 						for(int i = 0; i<indexes.size(); i++) {
 							index = indexes.get(i);
 							for(int j = 0; j< libraryList[index].length; j++){
 								String string = libraryList[index][j];
 								Platform.runLater(() -> ta.appendText(string + " "));
-								fromServer.writeUTF(libraryList[index][j] + " ");
+								fromServer.writeUTF(string + " ");
 							}
 							Platform.runLater(() -> ta.appendText("\n"));
 							fromServer.writeUTF("\n");
@@ -89,10 +91,10 @@ public class finalServer extends Application {
 		}
 		else{
 			for(int i = 0; i<libraryList.length; i++){
-				if(libraryList[i][0].toLowerCase().equals("''" + locator + "''")){
+				if (libraryList[i][1].toLowerCase().contains(locator2)){
 					indexes.add(i);
 				}
-				else if (libraryList[i][1].toLowerCase().equals("by " + locator2)){
+				else if(libraryList[i][0].toLowerCase().contains(locator)){
 					indexes.add(i);
 				}
 			}
