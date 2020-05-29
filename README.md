@@ -8,7 +8,7 @@ Why did you build this
 
 ## How to Run
 Explain what files are needed to run and which file to run. It is also helpful to include a screenshot of the program running. Make sure image is in your repository.
-[Image Caption](server.png)
+[Image Caption](/images/server.png)
 
 ## Code Example
 Show a small snippet of the code you are proud of and why.
