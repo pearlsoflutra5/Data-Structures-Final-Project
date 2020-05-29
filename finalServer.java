@@ -91,10 +91,10 @@ public class finalServer extends Application {
 		}
 		else{
 			for(int i = 0; i<libraryList.length; i++){
-				if (libraryList[i][1].toLowerCase().contains(locator2)){
+				if(libraryList[i][0].toLowerCase().contains(locator)){
 					indexes.add(i);
 				}
-				else if(libraryList[i][0].toLowerCase().contains(locator)){
+				else if (libraryList[i][1].toLowerCase().contains(locator2)){
 					indexes.add(i);
 				}
 			}
